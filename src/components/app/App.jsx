@@ -6,8 +6,10 @@ import { Filter } from 'components/filter';
 import { nanoid } from 'nanoid';
 import defaultContacts from '../../data/contacts.json';
 
+const localStorageKey = 'contacts';
+
 export const App = () => {
-  const localStorageKey = 'contacts';
+  
   const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem(localStorageKey);
     return savedContacts ? JSON.parse(savedContacts) : defaultContacts;
